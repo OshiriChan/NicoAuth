@@ -1,4 +1,5 @@
 $(function(){
+  if (localStorage.flag == undefined) { localStorage.flag = 1; }
   if (localStorage.flag == 1) {
     $("#watch_message_box").append('<h class="button" id="authbutton" href="#">枠移動 ON</h>');
   } else {
