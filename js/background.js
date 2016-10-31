@@ -12,7 +12,7 @@ $(function(){
   */
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-      console.log(request.comget);
+      //console.log(request.comget);
       if (request.comget != undefined) {
         sendResponse({com:stream_community, name:stream_name});
       } else if (request.streamflag != undefined) {
@@ -29,8 +29,8 @@ $(function(){
           localStorage.mail = request.mail;
           localStorage.password = request.password;
         }
-        console.log(request.mail);
-        console.log(request.save);
+        // console.log(request.mail);
+        // console.log(request.save);
         $.ajax({
           url: "https://secure.nicovideo.jp/secure/login?site=nicolive_antenna",
           type: "POST",
@@ -41,6 +41,10 @@ $(function(){
           },
           success: function (res) {
             var community_num = new Array();
+            if ($(res).find("ticket")[0] == undefined) {
+              alert("メールアドレスまたはパスワードが間違っています");
+              return;
+            }
             $.ajax( {
               url: "http://live.nicovideo.jp/api/getalertstatus",
               type: "POST",
