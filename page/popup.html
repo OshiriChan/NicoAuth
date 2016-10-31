@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>test</title>
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/popup.css">
+<script src="../lib/jquery.js"></script>
+<script src="../js/popup.js"></script>
+<script src="../lib/bootstrap.min.js"></script>
+</head>
+<body>
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#home" data-toggle="tab" id="GetCom">コミュ情報取得</a></li>
+    <li><a href="#stream" data-toggle="tab" id="live">放送中 ( <span id="live_num"></span> )</a></li>
+    <li><button type="button" class="btn btn-success" id="checkflg">アラート</button><br></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane fade in active" id="home">
+      <br/><br/>
+      ニコニコ動画のログインに必要な情報を入力してください<br/><br/>
+      <input type="email" class="form-control" size="40" id="mail" placeholder="Email"><br/>
+      <input type="password" class="form-control" size="40" id="password" placeholder="Password">
+      <br/>
+      <label for="saveinfo"><input type="checkbox" value="1" id="saveinfo"> 入力した情報を保存する</label><br><br>
+      <button type="button" class="btn btn-success btn-lg btn-block" id="num">コミュニティ情報更新</button><br>
+    </div>
+    <div class="tab-pane fade" id="stream">
+      <br><br>
+    </div>
+  </div>
+
+</body>
+</html>

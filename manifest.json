@@ -1,19 +1,23 @@
 {
   "name": "nicoauth",
-  "version": "0.0.1",
+  "version": "0.1",
   "manifest_version": 2,
   "description": "自動枠移動できたらいいな",
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "img/icon.png",
+    "default_popup": "page/popup.html"
+  },
+  "background": {
+    "scripts": ["lib/jquery.js", "js/background.js"]
   },
   "icons" : {
-    "128": "icon.png"
+    "128": "img/icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["http://live.nicovideo.jp/*", "http://com.nicovideo.jp/*"],
-      "js": ["j.js", "account.js"],
-      "css": ["css.css"],
+      "matches": ["http://live.nicovideo.jp/*", "http://com.nicovideo.jp/*", "https://secure.nicovideo.jp/*"],
+      "js": ["lib/jquery.js", "js/content.js"],
+      "css": ["css/css.css"],
       "run_at": "document_idle"
     }
   ]

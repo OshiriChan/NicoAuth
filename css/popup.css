@@ -1,0 +1,11 @@
+body {
+  margin : 50px ;
+  width: 400px;
+  background-color : #34495E ;
+  color: white;
+}
+.infomation {
+  text-align: center;
+}
+#saveinfo { vertical-align: middle; }
+a {color: white;}
