@@ -5,6 +5,7 @@
 	text-align: center;
 	text-decoration: none;
 	line-height: 40px;
+	cursor: pointer;
 	outline: none;
 }
 .button::before,

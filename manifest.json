@@ -13,9 +13,14 @@
   "icons" : {
     "128": "img/icon.png"
   },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.nicovideo.jp/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["http://live.nicovideo.jp/*", "http://com.nicovideo.jp/*", "https://secure.nicovideo.jp/*"],
+      "matches": ["http://live.nicovideo.jp/*", "http://com.nicovideo.jp/*", "https://secure.nicovideo.jp/*", "https://*/*"],
       "js": ["lib/jquery.js", "js/content.js"],
       "css": ["css/css.css"],
       "run_at": "document_idle"

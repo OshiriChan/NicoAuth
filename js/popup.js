@@ -8,14 +8,16 @@ $(function(){
   $("body").css("height", windowHeight);
 
   function onGotText(badgeText) {
-    $("#live_num").html(badgeText);
+    if (localStorage.streamflag == "0" ){
+      chrome.browserAction.setBadgeText({text:String("0")});
+      $("#live_num").html("0");
+    } else {
+      $("#live_num").html(badgeText);
+    }
   }
   chrome.browserAction.getBadgeText({}, onGotText);
 
-  if (localStorage.streamflag == "0" ){
-   chrome.browserAction.setBadgeText({text:String("0")});
-   $("#live_num").html('0');
- }
+
 
   chrome.runtime.sendMessage({greeting: "first"}, function(response) {
     if (response.res == "non") {
